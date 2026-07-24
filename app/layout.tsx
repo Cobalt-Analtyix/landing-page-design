@@ -2,6 +2,8 @@ import type { Metadata } from "next";
 import { Space_Grotesk, IBM_Plex_Sans, IBM_Plex_Mono } from "next/font/google";
 import "./globals.css";
 
+import { SITE_URL } from "@/lib/constants";
+
 const spaceGrotesk = Space_Grotesk({
   subsets: ["latin"],
   weight: ["400", "500", "600", "700"],
@@ -24,6 +26,7 @@ const ibmPlexMono = IBM_Plex_Mono({
 });
 
 export const metadata: Metadata = {
+  metadataBase: new URL(SITE_URL),
   title: "Cobalt Analytix — Consumer insight, before the week is out.",
   description:
     "Cobalt runs your surveys, analyzes the responses with AI, and hands you decisions — not spreadsheets. Days, not weeks.",
