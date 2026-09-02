@@ -32,7 +32,7 @@ export const metadata: Metadata = {
   metadataBase: new URL(SITE_URL),
   title: "Cobalt Analytix — Consumer insight, before the week is out.",
   description:
-    "Cobalt runs your surveys, analyzes the responses with AI, and hands you decisions — not spreadsheets. Days, not weeks.",
+    "Cobalt runs your surveys, analyzes the responses, and hands you decisions — not spreadsheets. Days, not weeks.",
 };
 
 export default function RootLayout({

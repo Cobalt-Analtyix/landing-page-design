@@ -1,5 +1,7 @@
 import Link from "next/link";
 
+import { CONTACT_EMAIL, SUPPORT_EMAIL } from "@/lib/constants";
+
 export function Footer() {
   return (
     <footer style={{ background: "#0b0e17", color: "rgba(255,255,255,.6)" }}>
@@ -9,7 +11,7 @@ export function Footer() {
             <div style={{ width: "24px", height: "24px", borderRadius: "6px", background: "#243bc4" }}></div>
             <span style={{ font: "600 16px var(--font-space-grotesk),sans-serif", color: "#fff" }}>Cobalt Analytix</span>
           </div>
-          <p style={{ margin: "14px 0 0", maxWidth: "260px", font: "400 13.5px/1.6 var(--font-ibm-plex-sans),sans-serif", color: "rgba(255,255,255,.5)" }}>Consumer surveys and AI analysis that turn questions into decisions — in days, not weeks.</p>
+          <p style={{ margin: "14px 0 0", maxWidth: "260px", font: "400 13.5px/1.6 var(--font-ibm-plex-sans),sans-serif", color: "rgba(255,255,255,.5)" }}>Consumer surveys and analysis that turn questions into decisions — in days, not weeks.</p>
         </div>
         <div>
           <div style={{ font: "600 12px var(--font-ibm-plex-mono),monospace", textTransform: "uppercase", letterSpacing: ".06em", color: "rgba(255,255,255,.4)", marginBottom: "14px" }}>Product</div>
@@ -24,6 +26,8 @@ export function Footer() {
           <div style={{ display: "flex", flexDirection: "column", gap: "10px", font: "400 14px var(--font-ibm-plex-sans),sans-serif" }}>
             <Link href="/about" style={{ color: "rgba(255,255,255,.65)" }}>About</Link>
             <a href="#contact" style={{ color: "rgba(255,255,255,.65)" }}>Contact</a>
+            <a href={`mailto:${CONTACT_EMAIL}`} style={{ color: "rgba(255,255,255,.65)" }}>{CONTACT_EMAIL}</a>
+            <a href={`mailto:${SUPPORT_EMAIL}`} style={{ color: "rgba(255,255,255,.65)" }}>{SUPPORT_EMAIL}</a>
           </div>
         </div>
         <div>

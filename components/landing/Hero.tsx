@@ -15,7 +15,7 @@ export function Hero() {
           Consumer insight,<br /><span style={{ color: "#243bc4" }}>before the week is out.</span>
         </h1>
         <p style={{ margin: "22px auto 0", maxWidth: "580px", font: "500 19px/1.55 var(--font-ibm-plex-sans),sans-serif", color: "#131722", textWrap: "pretty", textShadow: "0 1px 14px rgba(248,246,242,.9),0 1px 3px rgba(248,246,242,.9)" }}>
-          Cobalt runs your surveys, analyzes the responses with AI, and hands you decisions — not spreadsheets. Days, not weeks.
+          Cobalt runs your surveys, analyzes the responses, and hands you decisions — not spreadsheets. Days, not weeks.
         </p>
         <WaitlistForm variant="light" />
         <div style={{ marginTop: "14px", font: "500 12.5px var(--font-ibm-plex-sans),sans-serif", color: "#1c2230", textShadow: "0 1px 16px rgba(248,246,242,.9),0 1px 2px rgba(248,246,242,.85)" }}>Fresh panels · 30+ markets · No sales call required</div>

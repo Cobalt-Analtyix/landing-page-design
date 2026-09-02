@@ -3,6 +3,7 @@
 import { useRevealAnimations } from "@/hooks/useRevealAnimations";
 
 import { Contact } from "./Contact";
+import { ContactWidget } from "./ContactWidget";
 import { Faq } from "./Faq";
 import { Features } from "./Features";
 import { FinalCta } from "./FinalCta";
@@ -38,6 +39,7 @@ export default function LandingPage() {
       <Faq />
       <FinalCta />
       <Footer />
+      <ContactWidget />
     </div>
   );
 }
