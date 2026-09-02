@@ -1,7 +1,6 @@
 import { NextResponse } from "next/server";
 
 import { getSql } from "@/lib/db";
-import { CONTACT_EMAIL } from "@/lib/constants";
 
 const EMAIL_PATTERN = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
 
@@ -65,72 +64,12 @@ export async function POST(request: Request) {
       insert into contact_submissions (name, company, email, phone, message)
       values (${name}, ${company || null}, ${email}, ${phone || null}, ${message})
     `;
+    return NextResponse.json({ ok: true });
   } catch (error) {
     console.error("Failed to record contact submission", error);
     return NextResponse.json(
       { error: "Something went wrong. Please try again." },
       { status: 500 }
     );
-  }
-
-  await sendNotification({ name, company, email, phone, message });
-
-  return NextResponse.json({ ok: true });
-}
-
-type Submission = {
-  name: string;
-  company: string;
-  email: string;
-  phone: string;
-  message: string;
-};
-
-async function sendNotification(submission: Submission) {
-  const apiKey = process.env.RESEND_API_KEY;
-  if (!apiKey) return;
-
-  const to = process.env.CONTACT_INBOX || CONTACT_EMAIL;
-  const from = process.env.CONTACT_FROM_EMAIL || "Cobalt Analytix <noreply@cobaltanalytix.com>";
-  const subjectWho = submission.company
-    ? `${submission.name} · ${submission.company}`
-    : submission.name;
-
-  const lines = [
-    `Name:    ${submission.name}`,
-    `Company: ${submission.company || "—"}`,
-    `Email:   ${submission.email}`,
-    `Phone:   ${submission.phone || "—"}`,
-    "",
-    "Message:",
-    submission.message,
-  ];
-
-  try {
-    const response = await fetch("https://api.resend.com/emails", {
-      method: "POST",
-      headers: {
-        Authorization: `Bearer ${apiKey}`,
-        "Content-Type": "application/json",
-      },
-      body: JSON.stringify({
-        from,
-        to: [to],
-        reply_to: submission.email,
-        subject: `New enquiry — ${subjectWho}`,
-        text: lines.join("\n"),
-      }),
-    });
-
-    if (!response.ok) {
-      console.error(
-        "Resend notification failed",
-        response.status,
-        await response.text().catch(() => "")
-      );
-    }
-  } catch (error) {
-    // The submission is already saved; a failed email must not fail the request.
-    console.error("Resend notification error", error);
   }
 }

@@ -8,8 +8,8 @@ create table if not exists waitlist_signups (
 );
 
 -- Backs the "Reach us" contact form (components/landing/ContactWidget.tsx via
--- app/api/contact/route.ts). Every submission is stored here; if RESEND_API_KEY
--- is set, a copy is also emailed to CONTACT_INBOX.
+-- app/api/contact/route.ts). Every submission is stored here; read it from the
+-- Neon SQL editor:  select * from contact_submissions order by created_at desc;
 create table if not exists contact_submissions (
   id bigint generated always as identity primary key,
   name text not null,
