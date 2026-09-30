@@ -35,7 +35,7 @@ export function DashboardMockup() {
       <div style={{ padding: "20px", background: "#f5f6f9" }}>
         <div style={{ display: "flex", justifyContent: "space-between", alignItems: "flex-end", marginBottom: "16px" }}>
           <div>
-            <div style={{ font: "600 19px var(--font-space-grotesk),sans-serif", color: "#0f1420", letterSpacing: "-.01em" }}>Consumer Pulse — Snack Bars Dev Env</div>
+            <div style={{ font: "600 19px var(--font-space-grotesk),sans-serif", color: "#0f1420", letterSpacing: "-.01em" }}>Consumer Pulse — Snack Bars Dev Env Test</div>
             <div style={{ font: "400 13px var(--font-ibm-plex-sans),sans-serif", color: "#7a8090", marginTop: "2px" }}>Study #4821 · closed 2 days ago · 2,410 responses</div>
           </div>
           <div style={{ display: "flex", gap: "8px" }}>
