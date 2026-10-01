@@ -1,0 +1,34 @@
+@import 'tailwindcss';
+@import 'tw-animate-css';
+@import 'shadcn/tailwind.css';
+
+@theme inline { --color-background: #f2f9fe; --color-foreground: #000e41; }
+:root { color-scheme: light; }
+* { box-sizing: border-box; }
+html { scroll-behavior: smooth; background: #f2f9fe; }
+body { margin: 0; background: #f2f9fe; color: #000e41; font-family: Arial, Helvetica, sans-serif; }
+button, input, textarea { font: inherit; }
+::selection { background: #1a48e8; color: #ffffff; }
+
+@keyframes cobalt-breathe {
+  0%, 100% { transform: scale(1); }
+  50% { transform: scale(1.11); }
+}
+
+.process-icon { animation: cobalt-breathe 2.8s ease-in-out infinite; }
+.solution-dots {
+  position: absolute;
+  right: 3%;
+  bottom: 10%;
+  width: min(31vw, 30rem);
+  aspect-ratio: 1;
+  opacity: .34;
+  background-image: radial-gradient(#1a48e8 1px, transparent 1px);
+  background-size: 7px 7px;
+  border-radius: 50%;
+  mask-image: radial-gradient(circle, #000000 42%, transparent 72%);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .process-icon { animation: none; }
+}
