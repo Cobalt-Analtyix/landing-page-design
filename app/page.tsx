@@ -1,10 +1,10 @@
+'use client'
 import LandingPage from "@/components/landing/LandingPage";
 
-export default function Home() {
-  return <LandingPage />;
-}
+// export default function Home() {
+//   return <LandingPage />;
+// }
 
-'use client'
 
 import { useState } from 'react'
 import { ArrowRight, BarChart3, CheckCircle2, ChevronDown, CircleDollarSign, Clock3, FileText, LogIn, Mail, Menu, MessageSquareText, Search, Sparkles, UsersRound, X } from 'lucide-react'
