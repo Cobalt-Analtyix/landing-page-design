@@ -8,6 +8,17 @@ __v0_jsx-dev-runtime.ts
 
 # Environment variables
 .env*.local
+# dependencies
+/node_modules
+package-lock.json
+yarn.lock
+/.pnp
+.pnp.*
+.yarn/*
+!.yarn/patches
+!.yarn/plugins
+!.yarn/releases
+!.yarn/versions
 
 # Common ignores
 node_modules
