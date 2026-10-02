@@ -14,16 +14,18 @@ export const contact = {
 };
 
 const socialProfiles = [
-  { id: "linkedin", label: "LinkedIn", url: env(process.env.NEXT_PUBLIC_LINKEDIN_URL) },
-  { id: "x", label: "X", url: env(process.env.NEXT_PUBLIC_X_URL) },
-  { id: "instagram", label: "Instagram", url: env(process.env.NEXT_PUBLIC_INSTAGRAM_URL) },
+  { id: "linkedin", label: "LinkedIn", url: env(process.env.NEXT_PUBLIC_LINKEDIN_URL) ?? "https://linkedin.com" },
+  { id: "x", label: "X", url: env(process.env.NEXT_PUBLIC_X_URL) ?? "https://x.com" },
+  { id: "instagram", label: "Instagram", url: env(process.env.NEXT_PUBLIC_INSTAGRAM_URL) ?? "https://instagram.com" },
 ] as const;
 
 export type SocialLink = { id: "linkedin" | "x" | "instagram"; label: string; url: string };
 
-export const socials: SocialLink[] = socialProfiles.flatMap(({ id, label, url }) =>
-  url ? [{ id, label, url }] : [],
-);
+export const socials: SocialLink[] = socialProfiles.map(({ id, label, url }) => ({
+  id,
+  label,
+  url,
+}));
 
 export const navLinks = [
   { href: "/#how", label: "How it works" },
@@ -55,6 +57,7 @@ export const footerGroups = [
     links: [
       { href: "/insights", label: "Insights" },
       { href: "/faq", label: "FAQ" },
+      { href: "/help-center", label: "Help Center" },
       { href: "/privacy", label: "Privacy Policy" },
       { href: "/terms", label: "Terms of Use" },
     ],

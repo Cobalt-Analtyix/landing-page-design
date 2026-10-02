@@ -7,20 +7,20 @@ export function Hero() {
   return (
     <section
       id="top"
-      className="mx-auto grid max-w-7xl items-center gap-8 px-5 pb-20 pt-12 lg:grid-cols-[1.02fr_1.18fr] lg:px-8 lg:pb-28 lg:pt-16"
+      className="mx-auto grid max-w-7xl items-center gap-8 px-5 pb-16 pt-10 lg:grid-cols-[1.1fr_1fr] lg:px-8 lg:pb-20 lg:pt-12"
     >
       <div className="relative z-10">
-        <div className="mb-6 flex flex-wrap items-center gap-x-5 gap-y-1 text-sm font-extrabold uppercase tracking-[0.14em] text-cobalt">
+        <div className="mb-5 flex flex-wrap items-center gap-x-5 gap-y-1 text-xs font-extrabold uppercase tracking-[0.12em] text-cobalt lg:flex-nowrap lg:whitespace-nowrap">
           <span>• Market Research</span>
           <span>• Consumer Insights</span>
           <span>• Strategic Intelligence</span>
         </div>
-        <h1 className="max-w-xl text-3xl font-extrabold leading-[1.02] tracking-[-0.04em] sm:text-4xl lg:text-[3.45rem]">
+        <h1 className="max-w-none text-3xl font-extrabold leading-[1.05] tracking-[-0.04em] sm:text-4xl lg:text-[3.1rem]">
           Consumer insight,
           <br />
-          <span className="text-cobalt">before the week is out.</span>
+          <span className="text-cobalt lg:whitespace-nowrap">before the week is out.</span>
         </h1>
-        <p className="mt-6 max-w-lg text-lg leading-relaxed text-ink/75">
+        <p className="mt-5 max-w-xl text-base leading-relaxed text-ink/75 lg:text-[1.05rem]">
           Run surveys, analyze responses, and get clear, actionable decisions in days, not weeks. Powered by real
           consumers and AI-driven analysis.
         </p>
