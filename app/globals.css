@@ -2,7 +2,17 @@
 @import 'tw-animate-css';
 @import 'shadcn/tailwind.css';
 
-@theme inline { --color-background: #f2f9fe; --color-foreground: #000e41; }
+@theme inline {
+  --color-background: #f2f9fe;
+  --color-foreground: #000e41;
+  --color-sky: #f2f9fe;
+  --color-ink: #000e41;
+  --color-navy: #091d37;
+  --color-cobalt: #1a48e8;
+  --color-cobalt-dark: #153ac2;
+  --color-accent: #ff8a3d;
+  --color-accent-dark: #ff7a22;
+}
 :root { color-scheme: light; }
 * { box-sizing: border-box; }
 html { scroll-behavior: smooth; background: #f2f9fe; }
