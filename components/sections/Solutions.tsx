@@ -8,15 +8,14 @@ import { services } from "@/lib/content";
 
 export function Solutions() {
   return (
-    <section id="solutions" className="relative scroll-mt-20 overflow-hidden px-5 pb-16 lg:px-8 lg:pb-24">
-      <div className="solution-dots" aria-hidden="true" />
+    <section id="solutions" className="relative scroll-mt-20 overflow-hidden px-5 py-16 lg:px-8 lg:py-24">
       <Image
-        src="/canva_elements/Cobalt_BG_Background.png"
+        src="/canva_elements/cobalt-bg-building-elements.png"
         alt=""
         width={750}
         height={417}
         aria-hidden="true"
-        className="pointer-events-none absolute bottom-0 right-[-15%] z-0 h-full max-h-[31rem] w-[58%] object-cover object-right opacity-80"
+        className="pointer-events-none absolute bottom-0 right-0 z-0 h-full w-[58%] object-cover object-right opacity-80 mix-blend-multiply"
       />
       <div className="relative z-10 mx-auto max-w-7xl">
         <div className="flex flex-wrap items-end justify-between gap-5">

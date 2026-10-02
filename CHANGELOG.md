@@ -2,6 +2,12 @@
 
 ## 2026-10-02
 
+### Fixed
+- Re-positioned the dotted background element from the Solutions section to the Problem section.
+- Added `Inter` font in `app/layout.tsx` and removed default `Arial` from `globals.css` to fix font inconsistency across the website.
+- Cleaned up folder structure by moving the new root transparent images to the `/public/canva_elements` folder and deleting them from the root.
+
+
 ### Removed
 - Old landing page: `components/landing/*` (17 components) and `hooks/*`. The new home page is self-contained and nothing referenced them.
 - `components/PageChrome.tsx` (old beige page shell, used fonts that are no longer loaded).

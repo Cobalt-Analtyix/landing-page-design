@@ -1,5 +1,6 @@
 "use client";
 
+import Link from "next/link";
 import { useState } from "react";
 import { ArrowRight, LogIn, Menu, X } from "lucide-react";
 
@@ -24,9 +25,9 @@ export function MobileMenu() {
       {open && (
         <nav className="absolute inset-x-0 top-full grid gap-4 border-t border-cobalt/10 bg-sky px-5 py-5 font-bold lg:hidden">
           {navLinks.map(({ href, label }) => (
-            <a key={href} href={href} onClick={close} className="text-ink hover:text-cobalt">
+            <Link key={href} href={href} onClick={close} className="text-ink hover:text-cobalt">
               {label}
-            </a>
+            </Link>
           ))}
           <div className="mt-2 flex flex-col gap-2">
             <CtaButton href="/client-portal" variant="outline" arrow={false} onClick={close}>

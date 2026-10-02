@@ -32,7 +32,6 @@ export const processSteps: IconItem[] = [
 ];
 
 export const services: IconItem[] = [
-  { title: "Pricing Research", copy: "Find the right price points and optimise your pricing strategy.", icon: CircleDollarSign, color: "#1a48e8" },
   { title: "Product Research", copy: "Test and validate product concepts and features.", icon: Search, color: "#ff8a3d" },
   { title: "Brand Research", copy: "Understand brand perception, positioning and brand health.", icon: Sparkles, color: "#10cbb4" },
   { title: "Customer Research", copy: "Know your customers deeper and uncover unmet needs.", icon: UsersRound, color: "#a32de8" },

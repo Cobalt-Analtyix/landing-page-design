@@ -1,3 +1,4 @@
+import Link from "next/link";
 import { LogIn } from "lucide-react";
 
 import { MobileMenu } from "@/components/layout/MobileMenu";
@@ -14,9 +15,9 @@ export function SiteHeader() {
         </div>
         <nav className="hidden flex-1 items-center justify-center gap-7 whitespace-nowrap text-sm font-bold lg:flex">
           {navLinks.map(({ href, label }) => (
-            <a key={href} href={href} className="transition-colors hover:text-cobalt">
+            <Link key={href} href={href} className="transition-colors hover:text-cobalt">
               {label}
-            </a>
+            </Link>
           ))}
         </nav>
         <div className="hidden items-center justify-end gap-3 lg:flex lg:w-1/4">
