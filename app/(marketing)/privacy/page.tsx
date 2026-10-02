@@ -1,58 +1,71 @@
 import type { Metadata } from "next";
-import PageChrome from "@/components/PageChrome";
+
+import { LegalDocument, type LegalSection } from "@/components/shared/LegalDocument";
+import { contact } from "@/lib/site";
 
 export const metadata: Metadata = {
-  title: "Privacy — Cobalt Analytix",
-  description: "How Cobalt Analytix handles your data.",
+  title: "Privacy Policy",
+  description: "How Cobalt Analytix collects, uses and protects personal information on this website.",
 };
 
-const SECTIONS: { heading: string; body: string }[] = [
+const sections: LegalSection[] = [
   {
-    heading: "What we collect",
-    body: "Account details you give us (name, work email, company), the studies you create and their responses, and basic product-usage data so we can keep the service running and improve it.",
+    heading: "Information we collect",
+    body: [
+      "When you use our contact form, we collect the name, email address, company, phone number (if you provide one) and message you submit.",
+      "When you subscribe to our newsletter, we collect your email address.",
+      "We also collect basic, aggregated website analytics about how visitors use the site, such as pages viewed and general device and location information, to help us understand and improve it.",
+    ],
   },
   {
-    heading: "How we use it",
-    body: "To run your surveys, analyze responses, operate your dashboard, and communicate with you about your studies and account. We do not sell your data, and we do not train third-party models on your studies or your respondents' answers.",
+    heading: "How we use your information",
+    body: [
+      "We use contact details to respond to your enquiry and to discuss research projects with you. We use newsletter email addresses to send research insights and company updates.",
+      "We do not sell your personal information, and we do not share it with third parties for their own marketing.",
+    ],
   },
   {
-    heading: "Respondent data",
-    body: "Survey respondents are sourced through vetted panel partners and are screened and de-duplicated before they reach your study. Your study results belong to you.",
+    heading: "Where your information is stored",
+    body: [
+      "Form submissions and newsletter sign-ups are stored in a managed database hosted by our infrastructure providers. Website analytics are processed by our analytics provider. These providers handle data on our behalf and only to deliver their services.",
+    ],
   },
   {
-    heading: "Where things stand",
-    body: "We're in private beta. We're building toward SOC 2, and we offer SSO and custom DPAs for teams that need them on our Scale plan. If you need specifics for a security review, get in touch and we'll walk you through our current setup directly.",
+    heading: "How long we keep it",
+    body: [
+      "We keep enquiries for as long as needed to respond and to maintain a record of our relationship with you. You can ask us to delete your information at any time.",
+    ],
   },
   {
-    heading: "Contact",
-    body: "Questions about this policy or your data? Reach out through the waitlist form or book time with us — we're a small team and you'll hear back from a person, not a ticketing system.",
+    heading: "Your choices",
+    body: [
+      "You can unsubscribe from our newsletter at any time by contacting us. You can also ask us to access, correct or delete the personal information we hold about you.",
+    ],
+  },
+  {
+    heading: "Research participants",
+    body: [
+      "Participants in the studies we run are informed about how their responses will be used before they take part. This policy covers information collected through this website.",
+    ],
+  },
+  {
+    heading: "Changes to this policy",
+    body: ["We may update this policy from time to time. The date at the top of this page shows when it was last changed."],
+  },
+  {
+    heading: "Contact us",
+    body: [`For any questions about this policy or your information, email us at ${contact.email}.`],
   },
 ];
 
 export default function PrivacyPage() {
   return (
-    <PageChrome>
-      <section style={{ maxWidth: "760px", margin: "0 auto", padding: "80px 40px 120px" }}>
-        <div style={{ font: "500 13px var(--font-ibm-plex-mono),monospace", letterSpacing: ".06em", textTransform: "uppercase", color: "#243bc4" }}>
-          Privacy
-        </div>
-        <h1 style={{ margin: "16px 0 0", font: "600 44px/1.1 var(--font-space-grotesk),sans-serif", letterSpacing: "-.03em", color: "#0f1420" }}>
-          Your data, handled plainly.
-        </h1>
-        <p style={{ margin: "18px 0 0", font: "400 17px/1.6 var(--font-ibm-plex-sans),sans-serif", color: "#4a5160" }}>
-          We&apos;re a young company and this page is intentionally short. Here&apos;s the plain-language version of how we treat your data; a full legal policy will follow as we come out of private beta.
-        </p>
-        <div style={{ display: "flex", flexDirection: "column", gap: "28px", marginTop: "48px" }}>
-          {SECTIONS.map((s) => (
-            <div key={s.heading}>
-              <h2 style={{ margin: "0 0 8px", font: "600 19px var(--font-space-grotesk),sans-serif", color: "#0f1420", letterSpacing: "-.01em" }}>
-                {s.heading}
-              </h2>
-              <p style={{ margin: "0", font: "400 15px/1.65 var(--font-ibm-plex-sans),sans-serif", color: "#5a6070" }}>{s.body}</p>
-            </div>
-          ))}
-        </div>
-      </section>
-    </PageChrome>
+    <LegalDocument
+      eyebrow="Legal"
+      title="Privacy Policy"
+      intro="We keep this simple: here is what we collect through this website, why, and the choices you have."
+      updated="October 2, 2026"
+      sections={sections}
+    />
   );
 }

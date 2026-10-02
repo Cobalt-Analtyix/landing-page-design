@@ -1,9 +1,15 @@
 import { Analytics } from '@vercel/analytics/next'
 import type { Metadata, Viewport } from 'next'
 import './globals.css'
+import { SITE_URL } from '@/lib/constants'
+import { SITE_NAME } from '@/lib/site'
 
 export const metadata: Metadata = {
-  title: 'Cobalt Analytix | Consumer insight, before the week is out.',
+  metadataBase: new URL(SITE_URL),
+  title: {
+    default: `${SITE_NAME} | Consumer insight, before the week is out.`,
+    template: `%s | ${SITE_NAME}`,
+  },
   description: 'Run surveys, analyze responses, and make clear, actionable decisions faster with Cobalt Analytix.',
   generator: 'Cobalt Analytix',
   icons: {

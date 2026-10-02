@@ -25,6 +25,12 @@ export async function POST(request: Request) {
   }
 
   const record = body as Record<string, unknown>;
+
+  // Honeypot: real visitors never fill this hidden field, so pretend success and store nothing.
+  if (field(record, "website")) {
+    return NextResponse.json({ ok: true });
+  }
+
   const name = field(record, "name");
   const company = field(record, "company");
   const email = field(record, "email");
