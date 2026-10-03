@@ -17,7 +17,7 @@ export function InsightCard({ insight }: { insight: InsightMeta }) {
         <p className="text-xs font-extrabold uppercase tracking-[.1em] text-cobalt">
           {insight.category} <span className="mx-1">•</span> {insight.readTime}
         </p>
-        <h2 className="mt-3 text-lg font-extrabold leading-snug tracking-[-0.02em]">{insight.title}</h2>
+        <h2 className="mt-3 text-base font-extrabold leading-snug tracking-[-0.02em]">{insight.title}</h2>
         <p className="mt-3 text-sm leading-relaxed text-ink/70">{insight.excerpt}</p>
         <span className="mt-auto inline-flex items-center gap-1.5 pt-5 text-sm font-bold text-cobalt">
           Read article <ArrowRight size={14} aria-hidden="true" className="transition-transform group-hover:translate-x-1" />

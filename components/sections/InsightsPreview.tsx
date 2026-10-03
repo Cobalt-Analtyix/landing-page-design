@@ -41,11 +41,11 @@ export function InsightsPreview() {
                   <Image src={image} alt="" fill sizes="(min-width: 1024px) 33vw, 100vw" className="object-cover" />
                 </div>
                 <div className="flex flex-col p-5 flex-1">
-                  <span className="inline-block self-start rounded bg-cobalt/10 px-2 py-1 text-[9px] font-extrabold uppercase tracking-[0.1em] text-cobalt">
+                  <span className="inline-block self-start rounded bg-cobalt/10 px-2 py-1 text-xs font-extrabold uppercase tracking-[0.1em] text-cobalt">
                     {category}
                   </span>
                   <h3 className="mt-3 text-base font-extrabold leading-snug tracking-[-.02em] text-ink">{title}</h3>
-                  <div className="mt-auto pt-4 text-[11px] text-ink/50 font-medium tracking-wide uppercase">
+                  <div className="mt-auto pt-4 text-xs text-ink/50 font-medium tracking-wide uppercase">
                     {dummyDates[index]} <span className="mx-1.5 opacity-50">•</span> {readTime}
                   </div>
                 </div>
@@ -87,7 +87,7 @@ export function InsightsPreview() {
               Talk to an Expert <ArrowRight size={16} className="ml-2 hidden sm:block" />
             </button>
           </form>
-          <div className="mt-4 flex flex-wrap items-center justify-between px-2 text-[11px] font-medium text-white/80">
+          <div className="mt-4 flex flex-wrap items-center justify-between px-2 text-xs font-medium text-white/80">
             <span className="flex items-center gap-2"><Zap size={14} className="fill-[#1a48e8] text-[#1a48e8]" /> No sales call required</span>
             <span className="flex items-center gap-2"><ShieldCheck size={14} className="text-[#1a48e8]" /> We respect your privacy</span>
           </div>

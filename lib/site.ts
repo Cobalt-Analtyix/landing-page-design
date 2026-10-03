@@ -48,6 +48,7 @@ export const footerGroups = [
     heading: "Company",
     links: [
       { href: "/about", label: "About Us" },
+      { href: "/careers", label: "Careers" },
       { href: "/contact", label: "Contact Us" },
       { href: "/client-portal", label: "Client Portal" },
     ],

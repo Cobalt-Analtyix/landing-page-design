@@ -19,7 +19,7 @@ export default function ClientPortalPage() {
       <h1 className="mt-8 text-4xl font-extrabold tracking-[-0.04em] sm:text-5xl">
         Client portal, <span className="text-cobalt">coming soon.</span>
       </h1>
-      <p className="mt-6 text-lg leading-relaxed text-ink/75">
+      <p className="mt-6 text-base leading-relaxed text-ink/75">
         We&apos;re building a secure place for you to follow your studies and open your results. Until it launches,
         your Cobalt Analytix contact will share project updates and findings directly. You can also reach us at{" "}
         <a href={`mailto:${contact.email}`} className="font-bold text-cobalt hover:underline">

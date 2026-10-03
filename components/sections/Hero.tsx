@@ -15,12 +15,12 @@ export function Hero() {
           <span>• Consumer Insights</span>
           <span>• Strategic Intelligence</span>
         </div>
-        <h1 className="max-w-none text-3xl font-extrabold leading-[1.05] tracking-[-0.04em] sm:text-4xl lg:text-[3.1rem]">
+        <h1 className="max-w-none text-3xl font-extrabold leading-[1.05] tracking-[-0.04em] sm:text-4xl lg:text-5xl">
           Consumer insight,
           <br />
           <span className="text-cobalt lg:whitespace-nowrap">before the week is out.</span>
         </h1>
-        <p className="mt-5 max-w-xl text-base leading-relaxed text-ink/75 lg:text-[1.05rem]">
+        <p className="mt-5 max-w-xl text-base leading-relaxed text-ink/75">
           Run surveys, analyze responses, and get clear, actionable decisions in days, not weeks. Powered by real
           consumers and AI-driven analysis.
         </p>

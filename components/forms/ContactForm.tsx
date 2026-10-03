@@ -50,7 +50,7 @@ export function ContactForm() {
     return (
       <div className="flex h-full flex-col items-center justify-center py-10 text-center" role="status">
         <CheckCircle2 size={44} className="text-cobalt" aria-hidden="true" />
-        <h2 className="mt-5 text-2xl font-bold">Message sent</h2>
+        <h2 className="mt-5 text-xl font-bold">Message sent</h2>
         <p className="mt-3 max-w-sm text-white/70">
           Thanks for reaching out. A member of our team will reply to you by email soon.
         </p>
@@ -67,7 +67,7 @@ export function ContactForm() {
 
   return (
     <form onSubmit={onSubmit} noValidate className="space-y-5">
-      <h2 className="text-2xl font-bold">Send a message</h2>
+      <h2 className="text-xl font-bold">Send a message</h2>
       <div className="grid gap-5 sm:grid-cols-2">
         <InputField label="Full name" id="name" type="text" autoComplete="name" required maxLength={120} />
         <InputField label="Work email" id="email" type="email" autoComplete="email" required maxLength={200} />

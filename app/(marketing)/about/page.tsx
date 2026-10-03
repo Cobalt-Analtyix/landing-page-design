@@ -48,7 +48,7 @@ export default function AboutPage() {
         built for real-world impact.
       </PageIntro>
 
-      <section className="mx-auto grid max-w-4xl gap-5 px-5 pb-16 text-lg leading-relaxed text-ink/75 lg:px-8">
+      <section className="mx-auto grid max-w-4xl gap-5 px-5 pb-16 text-base leading-relaxed text-ink/75 lg:px-8">
         <p>
           Teams making real decisions about pricing, products and positioning are too often stuck waiting weeks for
           research that costs more than they planned to spend. By the time the report lands, the decision has already

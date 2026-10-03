@@ -16,8 +16,8 @@ function Detail({ icon, label, children }: { icon: ReactNode; label: string; chi
     <div className="flex items-start gap-4">
       <div className="grid h-12 w-12 shrink-0 place-items-center rounded-full bg-cobalt/20 text-cobalt">{icon}</div>
       <div>
-        <h3 className="text-sm font-bold uppercase tracking-wider text-white/60">{label}</h3>
-        <div className="mt-1 text-lg">{children}</div>
+        <h3 className="text-xs font-bold uppercase tracking-wider text-white/60">{label}</h3>
+        <div className="mt-1 text-base">{children}</div>
       </div>
     </div>
   );
@@ -31,11 +31,11 @@ export default function ContactPage() {
         <div className="pointer-events-none absolute bottom-0 left-0 h-64 w-64 rounded-full bg-accent opacity-10 blur-[120px]" />
 
         <div className="relative z-10">
-          <p className="text-sm font-extrabold uppercase tracking-[0.14em] text-accent">Contact</p>
-          <h1 className="mt-4 text-4xl font-extrabold leading-tight tracking-tight md:text-5xl">
+          <p className="text-xs font-extrabold uppercase tracking-[0.14em] text-accent">Contact</p>
+          <h1 className="mt-4 text-4xl font-extrabold leading-tight tracking-tight sm:text-5xl">
             Let&apos;s talk about your <span className="text-cobalt">research needs.</span>
           </h1>
-          <p className="mt-6 text-lg text-white/70">
+          <p className="mt-6 text-base text-white/70">
             Get in touch with our experts to discover how Cobalt Analytix can help you make faster, smarter
             decisions.
           </p>
@@ -72,7 +72,7 @@ export default function ContactPage() {
 
           {socials.length > 0 && (
             <div className="mt-10">
-              <h3 className="mb-3 text-sm font-bold uppercase tracking-wider text-white/60">Follow us</h3>
+              <h3 className="mb-3 text-xs font-bold uppercase tracking-wider text-white/60">Follow us</h3>
               <SocialLinks />
             </div>
           )}
