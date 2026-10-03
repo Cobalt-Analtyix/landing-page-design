@@ -3,7 +3,7 @@ import Link from "next/link";
 import { Logo } from "@/components/layout/Logo";
 import { NewsletterForm } from "@/components/forms/NewsletterForm";
 import { SocialLinks } from "@/components/shared/SocialLinks";
-import { SITE_NAME, footerGroups } from "@/lib/site";
+import { LEGAL_NAME, footerGroups } from "@/lib/site";
 
 export function SiteFooter() {
   return (
@@ -37,7 +37,7 @@ export function SiteFooter() {
         </div>
       </div>
       <div className="mx-auto mt-12 max-w-7xl border-t border-white/15 pt-6 text-right text-xs text-white/45">
-        © {new Date().getFullYear()} {SITE_NAME}. All rights reserved.
+        © {new Date().getFullYear()} {LEGAL_NAME}. All rights reserved.
       </div>
     </footer>
   );

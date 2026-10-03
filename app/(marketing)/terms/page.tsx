@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 
 import { LegalDocument, type LegalSection } from "@/components/shared/LegalDocument";
-import { contact } from "@/lib/site";
+import { LEGAL_NAME, contact } from "@/lib/site";
 
 export const metadata: Metadata = {
   title: "Terms of Use",
@@ -19,7 +19,7 @@ const sections: LegalSection[] = [
   {
     heading: "Our content",
     body: [
-      "The text, graphics, logos, articles and other material on this website belong to Cobalt Analytix or its licensors and are protected by intellectual property laws.",
+      `The text, graphics, logos, articles and other material on this website belong to ${LEGAL_NAME} or its licensors and are protected by intellectual property laws.`,
       "You may read, share links to and quote short extracts of our content with attribution. You may not copy, republish or modify it for commercial purposes without our written permission.",
     ],
   },
@@ -32,7 +32,7 @@ const sections: LegalSection[] = [
   {
     heading: "Research services",
     body: [
-      "Research projects are governed by a separate agreement or proposal agreed between you and Cobalt Analytix. These terms apply only to your use of the website.",
+      `Research projects are governed by a separate agreement or proposal agreed between you and ${LEGAL_NAME}. These terms apply only to your use of the website.`,
     ],
   },
   {
@@ -44,7 +44,7 @@ const sections: LegalSection[] = [
   {
     heading: "Disclaimer and liability",
     body: [
-      "We work to keep the website accurate and available, but it is provided as is without warranties of any kind. To the fullest extent permitted by law, Cobalt Analytix is not liable for any loss arising from your use of, or inability to use, the website.",
+      `We work to keep the website accurate and available, but it is provided as is without warranties of any kind. To the fullest extent permitted by law, ${LEGAL_NAME} is not liable for any loss arising from your use of, or inability to use, the website.`,
     ],
   },
   {
