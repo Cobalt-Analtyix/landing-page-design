@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 
 import { LegalDocument, type LegalSection } from "@/components/shared/LegalDocument";
-import { contact } from "@/lib/site";
+import { LEGAL_NAME, contact } from "@/lib/site";
 
 export const metadata: Metadata = {
   title: "Privacy Policy",
@@ -54,7 +54,7 @@ const sections: LegalSection[] = [
   },
   {
     heading: "Contact us",
-    body: [`For any questions about this policy or your information, email us at ${contact.email}.`],
+    body: [`For any questions about this policy or your information, email ${LEGAL_NAME} at ${contact.email}.`],
   },
 ];
 
