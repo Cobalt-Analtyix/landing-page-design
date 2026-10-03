@@ -17,7 +17,7 @@ export function CtaBanner({
         <p className="mx-auto mt-4 max-w-xl text-white/75">{copy}</p>
         <div className="mt-8 flex flex-wrap items-center justify-center gap-4">
           <CtaButton href="/contact">Contact us</CtaButton>
-          <CtaButton href={contact.bookingUrl} external variant="outline">
+          <CtaButton href={contact.bookingUrl} external variant="outlineLight">
             Book a call
           </CtaButton>
         </div>

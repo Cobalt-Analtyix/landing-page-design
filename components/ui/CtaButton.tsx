@@ -7,7 +7,8 @@ import { cn } from "@/lib/utils";
 const variants = {
   orange: "bg-accent text-white shadow-md shadow-accent/25 hover:bg-accent-dark",
   blue: "bg-cobalt text-white hover:bg-cobalt-dark",
-  outline: "border border-ink bg-white text-ink hover:bg-ink/5",
+  outline: "border border-ink bg-white text-ink hover:bg-slate-200",
+  outlineLight: "border border-white bg-transparent text-white hover:bg-white hover:text-ink",
 } as const;
 
 type CtaButtonProps = {
