@@ -47,13 +47,13 @@ export default async function InsightPage({ params }: InsightPageProps) {
         <Link href="/insights" className="text-sm font-bold text-cobalt hover:underline">
           ← All insights
         </Link>
-        <p className="mt-6 text-sm font-extrabold uppercase tracking-[0.14em] text-cobalt">
+        <p className="mt-6 text-xs font-extrabold uppercase tracking-[0.14em] text-cobalt">
           {insight.category} <span className="mx-1">•</span> {insight.readTime}
         </p>
         <h1 className="mt-4 max-w-3xl text-4xl font-extrabold leading-[1.05] tracking-[-0.04em] sm:text-5xl">
           {insight.title}
         </h1>
-        <p className="mt-5 max-w-2xl text-lg leading-relaxed text-ink/75">{insight.excerpt}</p>
+        <p className="mt-5 max-w-2xl text-base leading-relaxed text-ink/75">{insight.excerpt}</p>
         <div className="relative mt-10 aspect-[16/7] overflow-hidden rounded-2xl">
           <Image src={insight.image} alt="" fill priority sizes="(min-width: 1024px) 1024px, 100vw" className="object-cover" />
         </div>

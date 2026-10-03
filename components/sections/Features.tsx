@@ -16,8 +16,8 @@ export function Features() {
             <article key={title} className="flex gap-4 rounded-xl bg-white p-5">
               <IconBadge icon={icon} color={color!} />
               <div>
-                <h3 className="text-sm font-extrabold">{title}</h3>
-                <p className="mt-2 text-xs leading-relaxed text-ink/70">{copy}</p>
+                <h3 className="text-base font-extrabold">{title}</h3>
+                <p className="mt-2 text-sm leading-relaxed text-ink/70">{copy}</p>
               </div>
             </article>
           ))}
