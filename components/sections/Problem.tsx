@@ -5,7 +5,7 @@ import { problems } from "@/lib/content";
 
 export function Problem() {
   return (
-    <section className="relative overflow-hidden bg-navy px-5 py-12 text-white lg:px-12 lg:py-16">
+    <section className="relative flex flex-col justify-center overflow-hidden bg-navy px-5 py-8 text-white min-h-[45vh] lg:px-12 lg:py-10">
       <Image
         src="/canva_elements/cobalt-bg-dotted-elements.png"
         alt=""

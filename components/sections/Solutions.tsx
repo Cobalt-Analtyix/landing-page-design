@@ -8,7 +8,7 @@ import { services } from "@/lib/content";
 
 export function Solutions() {
   return (
-    <section id="solutions" className="relative scroll-mt-20 overflow-hidden px-5 py-16 lg:px-8 lg:py-24">
+    <section id="solutions" className="relative scroll-mt-20 overflow-hidden px-5 py-16 lg:px-8 lg:py-24 min-h-[calc(100vh-5rem)] flex flex-col justify-center">
       <Image
         src="/canva_elements/cobalt-bg-building-elements.png"
         alt=""

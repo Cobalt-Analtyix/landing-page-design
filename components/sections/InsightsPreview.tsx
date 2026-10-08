@@ -10,7 +10,7 @@ export function InsightsPreview() {
   const insights = INSIGHTS;
 
   return (
-    <section id="insights" className="scroll-mt-20 px-5 py-12 lg:px-8 lg:py-16">
+    <section id="insights" className="flex flex-col justify-center scroll-mt-20 px-5 py-12 min-h-[calc(100vh-5rem)] lg:px-8 lg:py-16">
       <div className="mx-auto grid max-w-7xl gap-8 lg:grid-cols-[.3fr_.7fr]">
         <div className="flex flex-col justify-center pr-4">
           <SectionHeading>
@@ -54,7 +54,7 @@ export function InsightsPreview() {
           })}
         </div>
       </div>
-      <div className="relative mx-auto mt-12 flex max-w-7xl flex-col items-center justify-between gap-8 overflow-hidden rounded-3xl bg-[#03153b] px-8 py-10 sm:px-10 md:flex-row">
+      <div className="relative mx-auto mt-13 flex max-w-8xl flex-col items-center justify-between gap-8 overflow-hidden rounded-3xl bg-[#03153b] px-8 py-16 sm:px-10 md:flex-row">
         <Image
           src="/canva_elements/Contact_BG.png"
           alt=""
