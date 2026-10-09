@@ -3,7 +3,7 @@ import { processSteps } from "@/lib/content";
 
 export function Process() {
   return (
-    <section id="how" className="scroll-mt-20 px-5 py-16 lg:px-8 lg:py-24">
+    <section id="how" className="flex flex-col justify-center scroll-mt-20 px-5 py-10 min-h-[calc(55vh-5rem)] lg:px-8 lg:py-12">
       <div className="mx-auto max-w-7xl">
         <div className="grid gap-8 lg:grid-cols-[.36fr_.64fr] lg:items-center">
           <SectionHeading copy="Our process is collaborative, rigorous and driven by real business outcomes.">

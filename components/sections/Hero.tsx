@@ -7,7 +7,7 @@ export function Hero() {
   return (
     <section
       id="top"
-      className="mx-auto grid max-w-7xl items-center gap-8 px-5 pb-16 pt-10 lg:grid-cols-[1.1fr_1fr] lg:px-8 lg:pb-20 lg:pt-12"
+      className="mx-auto grid min-h-[calc(100vh-5rem)] max-w-7xl items-center gap-8 px-5 pb-16 pt-10 lg:grid-cols-[1.1fr_1fr] lg:px-8 lg:pb-20 lg:pt-12"
     >
       <div className="relative z-10">
         <div className="mb-5 flex flex-wrap items-center gap-x-5 gap-y-1 text-xs font-extrabold uppercase tracking-[0.12em] text-cobalt lg:flex-nowrap lg:whitespace-nowrap">
@@ -36,7 +36,7 @@ export function Hero() {
           </CtaButton>
         </div>
       </div>
-      <div className="relative mx-auto w-full max-w-3xl lg:translate-x-6 xl:translate-x-10">
+      <div className="relative mx-auto w-full max-w-3xl lg:translate-x-4 xl:translate-x-4">
         <Image
           src="/canva_elements/CobaltA-transparent.png"
           alt="Cobalt analytics dashboard"
