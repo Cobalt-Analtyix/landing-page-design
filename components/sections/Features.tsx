@@ -3,48 +3,56 @@ import { features } from "@/lib/content";
 
 export function Features() {
   return (
-    <section id="features" className="relative scroll-mt-20 border-y border-cobalt/10 px-5 py-10 lg:px-8 lg:py-14">
+    <section
+      id="features"
+      className="scroll-mt-20 border-y border-slate-200/80 bg-slate-50/60 px-5 py-16 sm:py-20 lg:px-8 lg:py-24"
+    >
       <div className="mx-auto max-w-7xl">
-        <div className="flex flex-col md:flex-row md:items-end md:justify-between gap-4 mb-8">
+        {/* Section heading */}
+        <div className="mb-10 grid gap-5 md:mb-12 md:grid-cols-[1.2fr_0.8fr] md:items-end md:gap-12">
           <div>
-            <div className="inline-flex items-center gap-2 rounded-full border border-cobalt/15 bg-white/80 px-3.5 py-1 text-xs font-bold text-cobalt shadow-xs backdrop-blur-xs mb-3">
-              <span className="h-1.5 w-1.5 rounded-full bg-cobalt animate-pulse" />
-              Built For Modern Teams
+            <div className="mb-5 flex items-center gap-2 text-xs font-semibold uppercase tracking-[0.14em] text-blue-700">
+              <span className="h-1.5 w-1.5 rounded-full bg-blue-600" />
+              Built for modern teams
             </div>
-            <h2 className="text-3xl font-extrabold tracking-[-0.04em] text-ink sm:text-4xl lg:text-5xl leading-[1.05]">
-              Research built for <span className="bg-gradient-to-r from-cobalt via-cobalt-dark to-accent bg-clip-text text-transparent">today’s businesses.</span>
+
+            <h2 className="max-w-3xl text-4xl font-bold leading-[1.08] tracking-[-0.045em] text-slate-950 sm:text-5xl lg:text-[3.75rem]">
+              Research built for{" "}
+              <span className="text-blue-700">
+                today’s businesses.
+              </span>
             </h2>
           </div>
-          <p className="max-w-md text-sm sm:text-base leading-relaxed text-ink/70">
-            Everything you need to gather, analyze, and act on consumer intelligence at modern business speed.
+
+          <p className="max-w-lg pb-1 text-base leading-7 text-slate-600 md:justify-self-end md:text-lg md:leading-8">
+            Everything you need to gather, analyze, and act on
+            consumer intelligence at modern business speed.
           </p>
         </div>
 
-        <div className="grid gap-5 sm:grid-cols-2 lg:grid-cols-4">
-          {features.map(({ title, copy, icon, color }) => (
+        {/* Feature grid */}
+        <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
+          {features.map(({ title, copy, icon }) => (
             <article
               key={title}
-              className="group relative flex flex-col justify-between overflow-hidden rounded-2xl border border-cobalt/10 bg-white/90 p-6 shadow-xs backdrop-blur-xs transition-all duration-300 hover:-translate-y-1 hover:border-cobalt/30 hover:shadow-xl hover:shadow-cobalt/10"
+              className="group flex min-h-[228px] flex-col items-start border border-slate-200 bg-white p-6 transition-colors duration-200 hover:border-blue-300 sm:p-7"
             >
-              {/* Dynamic top highlight line */}
-              <div
-                className="absolute inset-x-0 top-0 h-1 transition-all duration-300 opacity-70 group-hover:opacity-100"
-                style={{ backgroundColor: color }}
-              />
-              
-              {/* Background ambient glow */}
-              <div
-                className="pointer-events-none absolute -right-10 -top-10 h-28 w-28 rounded-full blur-2xl transition-all duration-500 opacity-20 group-hover:opacity-40 group-hover:scale-125"
-                style={{ backgroundColor: color }}
-              />
-
-              <div>
-                <div className="mb-4 inline-block transition-transform duration-300 group-hover:scale-110">
-                  <IconBadge icon={icon} color={color!} />
+              <div className="mb-8">
+                <div className="flex h-11 w-11 items-center justify-center rounded-lg bg-blue-50 text-blue-700">
+                  <IconBadge
+                    icon={icon}
+                    color="#1D4ED8"
+                  />
                 </div>
-                <h3 className="text-lg font-bold text-ink tracking-tight">{title}</h3>
-                <p className="mt-2 text-sm leading-relaxed text-ink/70">{copy}</p>
               </div>
+
+              <h3 className="text-lg font-semibold tracking-[-0.025em] text-slate-950">
+                {title}
+              </h3>
+
+              <p className="mt-2 text-sm leading-6 text-slate-600">
+                {copy}
+              </p>
             </article>
           ))}
         </div>
@@ -52,4 +60,3 @@ export function Features() {
     </section>
   );
 }
-
