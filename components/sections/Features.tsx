@@ -38,7 +38,7 @@ export function Features() {
               className="group flex min-h-[228px] flex-col items-start border border-slate-200 bg-white p-6 transition-colors duration-200 hover:border-blue-300 sm:p-7"
             >
               <div className="mb-8">
-                <div className="flex h-11 w-11 items-center justify-center rounded-lg bg-blue-50 text-blue-700">
+                <div className="flex h-11 w-11 items-center justify-center rounded-3xl bg-blue-50 text-blue-700">
                   <IconBadge
                     icon={icon}
                     color="#1D4ED8"
