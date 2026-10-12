@@ -36,7 +36,7 @@ export function Hero() {
           </CtaButton>
         </div>
       </div>
-      <div className="relative mx-auto w-full max-w-3xl lg:translate-x-6 xl:translate-x-10">
+      <div className="relative mx-auto w-full max-w-3xl lg:translate-x-4 xl:translate-x-4">
         <Image
           src="/canva_elements/CobaltA-transparent.png"
           alt="Cobalt analytics dashboard"

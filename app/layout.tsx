@@ -18,15 +18,10 @@ export const metadata: Metadata = {
   icons: {
     icon: [
       {
-        url: '/icon-light-32x32.png',
-        media: '(prefers-color-scheme: light)',
-      },
-      {
-        url: '/icon.svg',
-        type: 'image/svg+xml',
+        url: '/company_assets/Cobalt_C_Logo.png',
       },
     ],
-    apple: '/apple-icon.png',
+    apple: '/company_assets/cobalt-logo-final-black.png',
   },
 }
 
