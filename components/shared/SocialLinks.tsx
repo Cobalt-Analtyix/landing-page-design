@@ -20,9 +20,9 @@ export function SocialLinks({ className = "" }: { className?: string }) {
             target="_blank"
             rel="noopener noreferrer"
             aria-label={label}
-            className="grid h-9 w-9 place-items-center rounded-full border border-white/25 text-white/80 transition-colors hover:border-white hover:bg-white/10 hover:text-white"
+            className="grid h-9 w-9 lg:h-12 lg:w-12 place-items-center rounded-full border border-white/25 text-white/80 transition-colors hover:border-white hover:bg-white/10 hover:text-white"
           >
-            <svg viewBox="0 0 24 24" width="16" height="16" fill="currentColor" aria-hidden="true">
+            <svg viewBox="0 0 24 24" className="lg:h-5 lg:w-5" width="16" height="16" fill="currentColor" aria-hidden="true">
               <path d={icons[id]} />
             </svg>
           </a>
