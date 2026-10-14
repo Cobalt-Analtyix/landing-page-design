@@ -7,8 +7,8 @@ import { INSIGHTS } from './insights-data'
 const INSIGHTS_DIR = path.join(process.cwd(), 'content', 'insights')
 
 const bodyStyle: React.CSSProperties = {
-  font: '400 17px/1.75 var(--font-ibm-plex-sans),sans-serif',
-  color: '#4a5160',
+  font: '400 17px/1.75 Arial, Helvetica, sans-serif',
+  color: 'rgba(0,14,65,.75)',
 }
 
 function parseInline(text: string): React.ReactNode[] {
@@ -20,11 +20,11 @@ function parseInline(text: string): React.ReactNode[] {
         <code
           key={`${part}-${index}`}
           style={{
-            background: 'rgba(20,24,36,.06)',
+            background: 'rgba(0,14,65,.06)',
             borderRadius: '4px',
             padding: '2px 6px',
-            font: '400 0.92em var(--font-ibm-plex-mono),monospace',
-            color: '#0f1420',
+            font: '400 0.92em ui-monospace, SFMono-Regular, Menlo, monospace',
+            color: '#000e41',
           }}
         >
           {part.slice(1, -1)}
@@ -34,7 +34,7 @@ function parseInline(text: string): React.ReactNode[] {
 
     if (part.startsWith('**') && part.endsWith('**')) {
       return (
-        <strong key={`${part}-${index}`} style={{ color: '#0f1420', fontWeight: 600 }}>
+        <strong key={`${part}-${index}`} style={{ color: '#000e41', fontWeight: 600 }}>
           {part.slice(2, -2)}
         </strong>
       )
@@ -107,12 +107,12 @@ export function renderMarkdown(markdown: string) {
         key={key}
         style={{
           margin: '0 0 26px',
-          borderLeft: '3px solid #243bc4',
-          background: 'rgba(36,59,196,.05)',
+          borderLeft: '3px solid #1a48e8',
+          background: 'rgba(26,72,232,.05)',
           borderRadius: '0 10px 10px 0',
           padding: '16px 20px',
-          font: '500 18px/1.6 var(--font-ibm-plex-sans),sans-serif',
-          color: '#0f1420',
+          font: '500 18px/1.6 Arial, Helvetica, sans-serif',
+          color: '#000e41',
         }}
       >
         <p style={{ margin: 0 }}>{parseInline(blockquoteBuffer.join(' '))}</p>
@@ -136,7 +136,7 @@ export function renderMarkdown(markdown: string) {
       flushList(`ul-${index}`)
       flushBlockquote(`quote-${index}`)
       nodes.push(
-        <hr key={`hr-${index}`} style={{ margin: '40px 0', border: 'none', borderTop: '1px solid rgba(20,24,36,.1)' }} />,
+        <hr key={`hr-${index}`} style={{ margin: '40px 0', border: 'none', borderTop: '1px solid rgba(0,14,65,.1)' }} />,
       )
       return
     }
@@ -150,9 +150,9 @@ export function renderMarkdown(markdown: string) {
           key={`h1-${index}`}
           style={{
             margin: '44px 0 18px',
-            font: '600 30px/1.2 var(--font-space-grotesk),sans-serif',
+            font: '600 30px/1.2 Arial, Helvetica, sans-serif',
             letterSpacing: '-.02em',
-            color: '#0f1420',
+            color: '#000e41',
           }}
         >
           {parseInline(line.slice(2))}
@@ -170,9 +170,9 @@ export function renderMarkdown(markdown: string) {
           key={`h2-${index}`}
           style={{
             margin: '36px 0 14px',
-            font: '600 22px/1.3 var(--font-space-grotesk),sans-serif',
+            font: '600 22px/1.3 Arial, Helvetica, sans-serif',
             letterSpacing: '-.01em',
-            color: '#0f1420',
+            color: '#000e41',
           }}
         >
           {parseInline(line.slice(3))}
@@ -190,8 +190,8 @@ export function renderMarkdown(markdown: string) {
           key={`h3-${index}`}
           style={{
             margin: '28px 0 12px',
-            font: '600 18px var(--font-space-grotesk),sans-serif',
-            color: '#0f1420',
+            font: '600 18px Arial, Helvetica, sans-serif',
+            color: '#000e41',
           }}
         >
           {parseInline(line.slice(4))}

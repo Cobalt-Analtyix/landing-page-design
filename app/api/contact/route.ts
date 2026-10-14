@@ -1,10 +1,11 @@
 import { NextResponse } from "next/server";
 
 import { getSql } from "@/lib/db";
+import { rateLimit } from "@/lib/rate-limit";
 
 const EMAIL_PATTERN = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
 
-const LIMITS = { name: 120, company: 160, email: 200, phone: 40, message: 4000 };
+const LIMITS = { name: 120, company: 160, email: 254, phone: 40, message: 4000 };
 
 function field(body: Record<string, unknown>, key: string): string {
   const value = body[key];
@@ -12,6 +13,9 @@ function field(body: Record<string, unknown>, key: string): string {
 }
 
 export async function POST(request: Request) {
+  const limited = await rateLimit(request, "contact", { limit: 5, windowSeconds: 3600 });
+  if (limited) return limited;
+
   let body: unknown;
 
   try {
@@ -25,6 +29,12 @@ export async function POST(request: Request) {
   }
 
   const record = body as Record<string, unknown>;
+
+  // Honeypot: real visitors never fill this hidden field, so pretend success and store nothing.
+  if (field(record, "website")) {
+    return NextResponse.json({ ok: true });
+  }
+
   const name = field(record, "name");
   const company = field(record, "company");
   const email = field(record, "email");
