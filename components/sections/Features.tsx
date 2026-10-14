@@ -1,4 +1,5 @@
 import { IconBadge } from "@/components/ui/IconBadge";
+import { SectionHeading } from "@/components/ui/SectionHeading";
 import { features } from "@/lib/content";
 
 export function Features() {
@@ -18,14 +19,6 @@ export function Features() {
                 <h3 className="text-base font-extrabold lg:text-2xl">{title}</h3>
                 <p className="mt-2 text-sm leading-relaxed text-ink/70 lg:mt-3 lg:text-lg">{copy}</p>
               </div>
-
-              <h3 className="text-lg font-semibold tracking-[-0.025em] text-slate-950">
-                {title}
-              </h3>
-
-              <p className="mt-2 text-sm leading-6 text-slate-600">
-                {copy}
-              </p>
             </article>
           ))}
         </div>
