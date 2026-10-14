@@ -7,20 +7,20 @@ import { LEGAL_NAME, footerGroups } from "@/lib/site";
 
 export function SiteFooter() {
   return (
-    <footer className="bg-navy px-5 pb-7 pt-14 text-white lg:px-8">
-      <div className="mx-auto grid max-w-7xl gap-10 md:grid-cols-2 lg:grid-cols-[1.3fr_1fr_1fr_1fr_1.4fr]">
+    <footer className="bg-navy px-5 pb-7 pt-14 text-white lg:px-8 lg:pb-10 lg:pt-20">
+      <div className="mx-auto grid max-w-[1650px] gap-10 lg:gap-14 md:grid-cols-2 lg:grid-cols-[1.3fr_1fr_1fr_1fr_1.4fr]">
         <div>
           <Logo footer />
-          <p className="mt-4 max-w-xs text-sm leading-relaxed text-white/60">
+          <p className="mt-4 max-w-xs text-sm leading-relaxed text-white/60 lg:mt-6 lg:max-w-sm lg:text-lg">
             We help businesses understand their customers through research that is faster, simpler and built for
             real-world impact.
           </p>
-          <SocialLinks className="mt-5" />
+          <SocialLinks className="mt-5 lg:mt-7" />
         </div>
         {footerGroups.map(({ heading, links }) => (
           <div key={heading}>
-            <h3 className="text-sm font-extrabold">{heading}</h3>
-            <ul className="mt-4 grid gap-3 text-sm text-white/60">
+            <h3 className="text-sm font-extrabold lg:text-xl">{heading}</h3>
+            <ul className="mt-4 grid gap-3 text-sm text-white/60 lg:mt-6 lg:gap-4 lg:text-lg">
               {links.map(({ href, label }) => (
                 <li key={label}>
                   <Link href={href} className="transition-colors hover:text-white">
@@ -32,12 +32,12 @@ export function SiteFooter() {
           </div>
         ))}
         <div>
-          <h3 className="text-sm font-extrabold">Subscribe to our newsletter</h3>
+          <h3 className="text-sm font-extrabold lg:text-xl">Subscribe to our newsletter</h3>
           <NewsletterForm />
         </div>
       </div>
-      <div className="mx-auto mt-12 max-w-7xl border-t border-white/15 pt-6 text-right text-xs text-white/45">
-        © {new Date().getFullYear()} {LEGAL_NAME}. All rights reserved.
+      <div className="mx-auto mt-12 max-w-[1650px] border-t border-white/15 pt-6 text-right text-xs lg:mt-16 lg:text-base text-white/45">
+        © {new Date().getFullYear()} {LEGAL_NAME} All rights reserved.
       </div>
     </footer>
   );

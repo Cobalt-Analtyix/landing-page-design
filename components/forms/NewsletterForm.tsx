@@ -50,7 +50,7 @@ export function NewsletterForm() {
           aria-label="Email for newsletter"
           autoComplete="email"
           placeholder="Enter your email"
-          className="min-w-0 flex-1 bg-transparent px-3 py-3 text-sm text-ink outline-none"
+          className="min-w-0 flex-1 bg-transparent px-3 py-3 text-sm text-ink outline-none lg:px-4 lg:py-4 lg:text-lg"
         />
         <button
           type="submit"
@@ -61,7 +61,7 @@ export function NewsletterForm() {
           <ChevronRight size={18} aria-hidden="true" />
         </button>
       </div>
-      <p className="mt-3 text-xs text-white/60" role="status" aria-live="polite">
+      <p className="mt-3 text-xs text-white/60 lg:text-base" role="status" aria-live="polite">
         {status.kind === "done"
           ? "Thanks for subscribing. We'll be in touch with research insights and updates."
           : status.kind === "error"
