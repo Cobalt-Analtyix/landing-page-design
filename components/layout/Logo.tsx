@@ -12,7 +12,7 @@ export function Logo({ footer = false }: { footer?: boolean }) {
         width={4366}
         height={1910}
         priority={!footer}
-        className={footer ? "h-11 w-auto lg:h-16" : "h-19 w-auto"}
+        className={footer ? "h-11 w-auto" : "h-15 w-auto"}
       />
     </Link>
   );
