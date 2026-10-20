@@ -10,37 +10,125 @@ const icons: Record<SocialLink["id"], string> = {
 
 type SocialLinksProps = {
   className?: string;
-  theme?: "light" | "dark";
+  theme?: "brand" | "light" | "dark";
+  shape?: "rounded" | "circle";
+  size?: "sm" | "md" | "lg";
+};
+
+const brandConfig: Record<
+  SocialLink["id"],
+  {
+    name: string;
+    bgClass: string;
+    style?: React.CSSProperties;
+    iconClass: string;
+    icon: React.ReactNode;
+  }
+> = {
+  linkedin: {
+    name: "LinkedIn",
+    bgClass: "bg-[#0A66C2] text-white",
+    iconClass: "h-5 w-5",
+    icon: (
+      <svg viewBox="0 0 24 24" fill="currentColor" className="h-5 w-5" aria-hidden="true">
+        <path d="M5.34 7.43a2.06 2.06 0 1 1 0-4.12 2.06 2.06 0 0 1 0 4.12ZM7.12 20.45H3.56V9h3.56v11.45ZM20.45 20.45h-3.56v-5.57c0-1.33-.03-3.04-1.85-3.04-1.86 0-2.14 1.45-2.14 2.94v5.67H9.34V9h3.41v1.56h.05c.48-.9 1.64-1.85 3.37-1.85 3.6 0 4.27 2.37 4.27 5.46v6.28Z" />
+      </svg>
+    ),
+  },
+  x: {
+    name: "X",
+    bgClass: "bg-black text-white ",
+    iconClass: "h-4 w-4",
+    icon: (
+      <svg viewBox="0 0 24 24" fill="currentColor" className="h-4 w-4" aria-hidden="true">
+        <path d="M18.9 1.15h3.68l-8.04 9.19L24 22.85h-7.4l-5.8-7.58-6.63 7.58H.49l8.6-9.83L0 1.15h7.59l5.24 6.93 6.07-6.93Zm-1.29 19.5h2.04L6.48 3.24H4.3l13.31 17.41Z" />
+      </svg>
+    ),
+  },
+  instagram: {
+    name: "Instagram",
+    bgClass: "text-white",
+    style: {
+      background:
+        "radial-gradient(circle at 30% 107%, #fdf497 0%, #fdf497 5%, #fd5949 45%, #d6249f 60%, #285AEB 90%)",
+    },
+    iconClass: "h-5 w-5",
+    icon: (
+      <svg viewBox="0 0 24 24" fill="currentColor" className="h-5 w-5" aria-hidden="true">
+        <path d="M12 2.16c3.2 0 3.58.01 4.85.07 3.25.15 4.77 1.69 4.92 4.92.06 1.27.07 1.65.07 4.85s-.01 3.58-.07 4.85c-.15 3.23-1.66 4.77-4.92 4.92-1.27.06-1.64.07-4.85.07s-3.58-.01-4.85-.07c-3.26-.15-4.77-1.7-4.92-4.92-.06-1.27-.07-1.64-.07-4.85s.01-3.58.07-4.85C2.38 3.92 3.9 2.38 7.15 2.23 8.42 2.17 8.8 2.16 12 2.16ZM12 0C8.74 0 8.33.01 7.05.07 2.7.27.27 2.69.07 7.05.01 8.33 0 8.74 0 12s.01 3.67.07 4.95c.2 4.36 2.62 6.78 6.98 6.98C8.33 23.99 8.74 24 12 24s3.67-.01 4.95-.07c4.35-.2 6.78-2.62 6.98-6.98.06-1.28.07-1.69.07-4.95s-.01-3.67-.07-4.95c-.2-4.35-2.62-6.78-6.98-6.98C15.67.01 15.26 0 12 0Zm0 5.84a6.16 6.16 0 1 0 0 12.32 6.16 6.16 0 0 0 0-12.32ZM12 16a4 4 0 1 1 0-8 4 4 0 0 1 0 8Zm6.4-11.85a1.44 1.44 0 1 0 0 2.88 1.44 1.44 0 0 0 0-2.88Z" />
+      </svg>
+    ),
+  },
 };
 
 export function SocialLinks({
   className = "",
   theme = "dark",
+  shape = "rounded",
+  size = "sm",
 }: SocialLinksProps) {
   if (socials.length === 0) return null;
 
-  const linkStyles =
+  const sizeClasses =
+    size === "sm"
+      ? "h-8 w-8"
+      : size === "lg"
+      ? "h-11 w-11"
+      : "h-9 w-9 sm:h-10 sm:w-10";
+
+  const shapeClasses = shape === "circle" ? "rounded-full" : "rounded-xl";
+
+  const monochromeStyles =
     theme === "light"
-      ? "border-slate-300 text-slate-600 hover:border-cobalt hover:bg-cobalt hover:text-white"
-      : "border-white/25 text-white/80 hover:border-white hover:bg-white/10 hover:text-white";
+      ? "border border-slate-300 text-slate-600 hover:border-cobalt hover:bg-cobalt hover:text-white"
+      : "border border-white/25 text-white/80 hover:border-white hover:bg-white/10 hover:text-white";
 
   return (
-    <ul className={`flex items-center gap-4 ${className}`}>
-      {socials.map(({ id, label, url }) => (
-        <li key={id}>
-          <a
-            href={url}
-            target="_blank"
-            rel="noopener noreferrer"
-            aria-label={label}
-            className="grid h-9 w-9 lg:h-12 lg:w-12 place-items-center rounded-full border border-white/25 text-white/80 transition-colors hover:border-white hover:bg-white/10 hover:text-white"
-          >
-            <svg viewBox="0 0 24 24" className="lg:h-5 lg:w-5" width="16" height="16" fill="currentColor" aria-hidden="true">
-              <path d={icons[id]} />
-            </svg>
-          </a>
-        </li>
-      ))}
+    <ul className={`flex items-center gap-3 ${className}`}>
+      {socials.map(({ id, label, url }) => {
+        const brand = brandConfig[id];
+
+        if (theme === "brand" && brand) {
+          return (
+            <li key={id}>
+              <a
+                href={url}
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label={label}
+                title={label}
+                style={brand.style}
+                className={`grid ${sizeClasses} place-items-center ${shapeClasses} shadow-sm transition-all duration-200 hover:-translate-y-0.5 active:translate-y-0 active:scale-95 ${brand.bgClass}`}
+              >
+                {brand.icon}
+              </a>
+            </li>
+          );
+        }
+
+        return (
+          <li key={id}>
+            <a
+              href={url}
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label={label}
+              title={label}
+              className={`grid ${sizeClasses} place-items-center ${shapeClasses} transition-colors ${monochromeStyles}`}
+            >
+              <svg
+                viewBox="0 0 24 24"
+                width="16"
+                height="16"
+                fill="currentColor"
+                aria-hidden="true"
+              >
+                <path d={icons[id]} />
+              </svg>
+            </a>
+          </li>
+        );
+      })}
     </ul>
   );
 }

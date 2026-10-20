@@ -53,11 +53,8 @@ export default function ContactPage() {
 
         {/* Contact information */}
         <div className="relative z-10">
-          <p className="text-xs font-extrabold uppercase tracking-[0.14em] text-accent">
-            Contact
-          </p>
 
-          <h1 className="mt-3 text-3xl font-extrabold leading-[1.1] tracking-tight text-[#0B1933] sm:text-4xl">
+          <h1 className="mt-2 text-4xl font-extrabold leading-[1.1] tracking-tight text-[#0B1933] sm:text-4xl">
             Let&apos;s talk about your{" "}
             <span className="text-cobalt">research needs.</span>
           </h1>
@@ -69,7 +66,7 @@ export default function ContactPage() {
 
           <div className="mt-7 space-y-4">
             <Detail
-              icon={<Mail size={19} aria-hidden="true" />}
+              icon={<Mail size={12} aria-hidden="true" />}
               label="Email us"
             >
               <a
@@ -126,7 +123,7 @@ export default function ContactPage() {
                 Follow us
               </h3>
 
-              <SocialLinks theme="light" />
+              <SocialLinks theme="brand" />
             </div>
           )}
         </div>
