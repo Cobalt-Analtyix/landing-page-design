@@ -31,7 +31,7 @@ export function CtaButton({
   onClick,
 }: CtaButtonProps) {
   const classes = cn(
-    "inline-flex min-h-11 items-center justify-center gap-2 rounded-full px-5 text-sm font-bold transition-all hover:-translate-y-0.5",
+    "inline-flex min-h-11 items-center justify-center gap-2 whitespace-nowrap rounded-full px-5 text-sm font-bold transition-all hover:-translate-y-0.5",
     variants[variant],
     className,
   );

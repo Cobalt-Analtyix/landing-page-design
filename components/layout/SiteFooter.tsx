@@ -1,9 +1,10 @@
+import { Mail } from "lucide-react";
 import Link from "next/link";
 
 import { Logo } from "@/components/layout/Logo";
 import { NewsletterForm } from "@/components/forms/NewsletterForm";
 import { SocialLinks } from "@/components/shared/SocialLinks";
-import { LEGAL_NAME, footerGroups } from "@/lib/site";
+import { LEGAL_NAME, contact, footerGroups } from "@/lib/site";
 
 export function SiteFooter() {
   return (
@@ -34,10 +35,21 @@ export function SiteFooter() {
         <div>
           <h3 className="text-sm font-extrabold lg:text-xl">Subscribe to our newsletter</h3>
           <NewsletterForm />
+          {contact.email && (
+            <div className="mt-4 lg:mt-5">
+              <a
+                href={`mailto:${contact.email}`}
+                className="inline-flex items-center gap-2 text-xs text-white/70 transition-colors hover:text-white lg:text-base"
+              >
+                <Mail size={16} aria-hidden="true" className="shrink-0 text-white/60" />
+                <span>{contact.email}</span>
+              </a>
+            </div>
+          )}
         </div>
       </div>
       <div className="mx-auto mt-12 max-w-[1650px] border-t border-white/15 pt-6 text-right text-xs lg:mt-16 lg:text-base text-white/45">
-        © {new Date().getFullYear()} {LEGAL_NAME} All rights reserved.
+       {LEGAL_NAME} All rights reserved.
       </div>
     </footer>
   );
