@@ -1,7 +1,7 @@
 import { CALENDLY_URL } from "@/lib/constants";
 
 export const SITE_NAME = "Cobalt Analytix";
-export const LEGAL_NAME = "Cobalt Analytix Pvt. Ltd.";
+export const LEGAL_NAME = "Cobalt Analytix Private Limited.";
 
 const env = (value: string | undefined) => value?.trim() || undefined;
 

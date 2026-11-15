@@ -1,10 +1,12 @@
 import type { Metadata } from "next";
-import { CalendarDays, Mail, MapPin, Phone } from "lucide-react";
+import { CalendarDays, Mail, Phone } from "lucide-react";
 import type { ReactNode } from "react";
 
 import { ContactForm } from "@/components/forms/ContactForm";
+import { CtaButton } from "@/components/ui/CtaButton";
 import { SocialLinks } from "@/components/shared/SocialLinks";
 import { contact, socials } from "@/lib/site";
+import { cn } from "@/lib/utils";
 
 export const metadata: Metadata = {
   title: "Contact Us",
@@ -16,16 +18,43 @@ function Detail({
   icon,
   label,
   children,
+  iconClassName,
+  href,
+  external,
 }: {
   icon: ReactNode;
   label: string;
   children: ReactNode;
+  iconClassName?: string;
+  href?: string;
+  external?: boolean;
 }) {
+  const iconContent = (
+    <div
+      className={cn(
+        "grid h-10 w-10 shrink-0 place-items-center rounded-full transition-all duration-200",
+        iconClassName || "bg-cobalt/10 text-cobalt ring-1 ring-cobalt/10 group-hover:bg-cobalt/15"
+      )}
+    >
+      {icon}
+    </div>
+  );
+
   return (
-    <div className="flex items-start gap-3">
-      <div className="grid h-10 w-10 shrink-0 place-items-center rounded-full bg-cobalt/10 text-cobalt ring-1 ring-cobalt/10">
-        {icon}
-      </div>
+    <div className="group flex items-start gap-3">
+      {href ? (
+        <a
+          href={href}
+          target={external ? "_blank" : undefined}
+          rel={external ? "noopener noreferrer" : undefined}
+          className="shrink-0 rounded-full transition-transform duration-200 hover:scale-105 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-cobalt"
+          aria-label={label}
+        >
+          {iconContent}
+        </a>
+      ) : (
+        iconContent
+      )}
 
       <div className="min-w-0 pt-0.5">
         <h3 className="text-xs font-bold uppercase tracking-wider text-slate-500">
@@ -44,7 +73,7 @@ export default function ContactPage() {
   return (
     <section className="px-4 pt-6 pb-20 lg:px-8 lg:pt-8 lg:pb-20">
       <div
-        className="relative mx-auto grid w-full max-w-6xl gap-7 overflow-hidden rounded-3xl border border-[#C7D8F3] bg-[#D9E6FB] p-6 text-slate-900 shadow-[0_20px_60px_rgba(30,64,175,0.08)] md:p-8 lg:min-h-[calc(100svh-150px)] lg:grid-cols-[.9fr_1.1fr] lg:gap-8 lg:p-8 xl:gap-10 xl:p-9"
+        className="relative mx-auto grid w-full max-w-6xl gap-7 overflow-hidden rounded-3xl border border-[#C7D8F3] bg-[#D9E6FB] p-6 text-slate-900 shadow-[0_20px_60px_rgba(30,64,175,0.08)] md:p-8 lg:min-h-[calc(100svh-150px)] lg:grid-cols-[.9fr_1.1fr] lg:items-center lg:gap-8 lg:p-8 xl:gap-10 xl:p-9"
       >
         {/* Background decoration */}
         <div className="pointer-events-none absolute -right-16 -top-16 h-64 w-64 rounded-full bg-cobalt/10 blur-[100px]" />
@@ -53,11 +82,8 @@ export default function ContactPage() {
 
         {/* Contact information */}
         <div className="relative z-10">
-          <p className="text-xs font-extrabold uppercase tracking-[0.14em] text-accent">
-            Contact
-          </p>
 
-          <h1 className="mt-3 text-3xl font-extrabold leading-[1.1] tracking-tight text-[#0B1933] sm:text-4xl">
+          <h1 className="mt-2 text-4xl font-extrabold leading-[1.1] tracking-tight text-[#0B1933] sm:text-4xl">
             Let&apos;s talk about your{" "}
             <span className="text-cobalt">research needs.</span>
           </h1>
@@ -69,11 +95,12 @@ export default function ContactPage() {
 
           <div className="mt-7 space-y-4">
             <Detail
-              icon={<Mail size={19} aria-hidden="true" />}
+              icon={<Mail size={18} aria-hidden="true" />}
               label="Email us"
+              href={`mailto:${contact.email}`}
             >
               <a
-                href={`mailto:${contact.email} `}
+                href={`mailto:${contact.email}`}
                 className="transition-colors hover:text-cobalt"
               >
                 {contact.email}
@@ -82,41 +109,34 @@ export default function ContactPage() {
 
             {contact.phone && (
               <Detail
-                icon={<Phone size={19} aria-hidden="true" />}
+                icon={<Phone size={18} aria-hidden="true" />}
                 label="Call us"
+                href={`tel:${contact.phone.replace(/[^\d+]/g, "")}`}
+                iconClassName="bg-[#0B1933] text-white shadow-sm ring-1 ring-[#0B1933]/30 hover:bg-[#153ac2]"
               >
                 <a
-                  href={`tel:${contact.phone.replace(/[^\d+]/g, "")} `}
-                  className="transition-colors hover:text-cobalt"
+                  href={`tel:${contact.phone.replace(/[^\d+]/g, "")}`}
+                  className="font-medium text-slate-900 transition-colors hover:text-cobalt"
                 >
                   {contact.phone}
                 </a>
               </Detail>
             )}
 
-            {contact.address && (
-              <Detail
-                icon={<MapPin size={19} aria-hidden="true" />}
-                label="Visit us"
-              >
-                <span className="whitespace-pre-line">
-                  {contact.address}
-                </span>
-              </Detail>
-            )}
-
             <Detail
-              icon={<CalendarDays size={19} aria-hidden="true" />}
+              icon={<CalendarDays size={18} aria-hidden="true" />}
               label="Prefer to talk?"
+              href={contact.bookingUrl}
+              external
+              iconClassName="bg-accent text-white shadow-sm ring-1 ring-accent/30"
             >
-              <a
+              <CtaButton
                 href={contact.bookingUrl}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="transition-colors hover:text-cobalt"
+                external
+                className="mt-1 min-h-0 px-5 py-2.5 text-sm shadow-md"
               >
                 Book a call with our team
-              </a>
+              </CtaButton>
             </Detail>
           </div>
 
@@ -126,7 +146,7 @@ export default function ContactPage() {
                 Follow us
               </h3>
 
-              <SocialLinks theme="light" />
+              <SocialLinks theme="brand" />
             </div>
           )}
         </div>

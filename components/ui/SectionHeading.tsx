@@ -18,14 +18,14 @@ export function SectionHeading({
       <h2
         className={cn(
           "text-4xl font-extrabold leading-[.99] tracking-[-.055em] sm:text-5xl",
-          large && "lg:text-6xl",
+          large && "xl:text-6xl",
           light ? "text-white" : "text-ink",
         )}
       >
         {children}
       </h2>
       {copy && (
-        <p className={cn("mt-5 max-w-xl text-base leading-relaxed", large && "lg:mt-7 lg:max-w-2xl lg:text-xl", light ? "text-white/80" : "text-ink/70")}>
+        <p className={cn("mt-5 max-w-xl text-base leading-relaxed", large && "xl:mt-7 xl:max-w-2xl xl:text-xl", light ? "text-white/80" : "text-ink/70")}>
           {copy}
         </p>
       )}
