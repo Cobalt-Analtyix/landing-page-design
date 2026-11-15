@@ -3,6 +3,7 @@ import { CalendarDays, Mail, Phone } from "lucide-react";
 import type { ReactNode } from "react";
 
 import { ContactForm } from "@/components/forms/ContactForm";
+import { CtaButton } from "@/components/ui/CtaButton";
 import { SocialLinks } from "@/components/shared/SocialLinks";
 import { contact, socials } from "@/lib/site";
 import { cn } from "@/lib/utils";
@@ -127,15 +128,15 @@ export default function ContactPage() {
               label="Prefer to talk?"
               href={contact.bookingUrl}
               external
+              iconClassName="bg-accent text-white shadow-sm ring-1 ring-accent/30"
             >
-              <a
+              <CtaButton
                 href={contact.bookingUrl}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="transition-colors hover:text-cobalt"
+                external
+                className="mt-1 min-h-0 px-5 py-2.5 text-sm shadow-md"
               >
                 Book a call with our team
-              </a>
+              </CtaButton>
             </Detail>
           </div>
 
