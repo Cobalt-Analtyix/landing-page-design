@@ -72,7 +72,7 @@ export default function ContactPage() {
   return (
     <section className="px-4 pt-6 pb-20 lg:px-8 lg:pt-8 lg:pb-20">
       <div
-        className="relative mx-auto grid w-full max-w-6xl gap-7 overflow-hidden rounded-3xl border border-[#C7D8F3] bg-[#D9E6FB] p-6 text-slate-900 shadow-[0_20px_60px_rgba(30,64,175,0.08)] md:p-8 lg:min-h-[calc(100svh-150px)] lg:grid-cols-[.9fr_1.1fr] lg:gap-8 lg:p-8 xl:gap-10 xl:p-9"
+        className="relative mx-auto grid w-full max-w-6xl gap-7 overflow-hidden rounded-3xl border border-[#C7D8F3] bg-[#D9E6FB] p-6 text-slate-900 shadow-[0_20px_60px_rgba(30,64,175,0.08)] md:p-8 lg:min-h-[calc(100svh-150px)] lg:grid-cols-[.9fr_1.1fr] lg:items-center lg:gap-8 lg:p-8 xl:gap-10 xl:p-9"
       >
         {/* Background decoration */}
         <div className="pointer-events-none absolute -right-16 -top-16 h-64 w-64 rounded-full bg-cobalt/10 blur-[100px]" />
