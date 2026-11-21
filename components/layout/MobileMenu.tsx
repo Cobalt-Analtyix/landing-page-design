@@ -5,7 +5,7 @@ import { useState } from "react";
 import { ArrowRight, LogIn, Menu, X } from "lucide-react";
 
 import { CtaButton } from "@/components/ui/CtaButton";
-import { navLinks } from "@/lib/site";
+import { clientPortalUrl, navLinks } from "@/lib/site";
 
 export function MobileMenu() {
   const [open, setOpen] = useState(false);
@@ -30,7 +30,7 @@ export function MobileMenu() {
             </Link>
           ))}
           <div className="mt-2 flex flex-col gap-2">
-            <CtaButton href="/client-portal" variant="outline" arrow={false} onClick={close}>
+            <CtaButton href={clientPortalUrl} external variant="outline" arrow={false} onClick={close}>
               <LogIn size={15} aria-hidden="true" /> Client Portal <ArrowRight size={14} aria-hidden="true" />
             </CtaButton>
             <CtaButton href="/contact" onClick={close}>

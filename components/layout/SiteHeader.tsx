@@ -4,7 +4,7 @@ import { LogIn } from "lucide-react";
 import { MobileMenu } from "@/components/layout/MobileMenu";
 import { Logo } from "@/components/layout/Logo";
 import { CtaButton } from "@/components/ui/CtaButton";
-import { navLinks } from "@/lib/site";
+import { clientPortalUrl, navLinks } from "@/lib/site";
 
 export function SiteHeader() {
   return (
@@ -22,7 +22,8 @@ export function SiteHeader() {
         </nav>
         <div className="hidden shrink-0 items-center justify-end gap-2.5 lg:flex xl:gap-3">
           <CtaButton
-            href="/client-portal"
+            href={clientPortalUrl}
+            external
             variant="outline"
             arrow={false}
             className="min-h-0 px-4 py-2 text-sm font-bold whitespace-nowrap xl:px-5 xl:py-2.5 xl:text-base"

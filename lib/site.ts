@@ -28,6 +28,8 @@ export const socials: SocialLink[] = socialProfiles.map(({ id, label, url }) => 
   url,
 }));
 
+export const clientPortalUrl = "https://portal.cobaltanalytix.in";
+
 export const navLinks = [
   { href: "/#how", label: "How it works" },
   { href: "/#features", label: "Features" },
